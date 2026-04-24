@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honor Your Life - Poster Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 Honor Your Life Poster 🌟</h1>
+            <p>Browning High School - Advisory Program</p>
+            <nav class="nav-buttons">
+                <button class="nav-btn active" onclick="showPage('form')">Create Poster</button>
+                <button class="nav-btn" onclick="showPage('gallery')">View Gallery</button>
+            </nav>
+        </header>
+
+        <!-- FORM PAGE -->
+        <section id="form-page" class="page active">
+            <div class="form-container">
+                <h2>Tell Us About Yourself</h2>
+                <p class="form-intro">Fill out this form to create your Honor Your Life poster. All fields are optional.</p>
+
+                <form id="posterForm">
+                    <!-- Personal Information -->
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name:</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="indianName">Indian Name (if you have one):</label>
+                            <input type="text" id="indianName" name="indianName" placeholder="e.g., Little One (Na Poo)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tribalAffiliation">Tribal Affiliation (if enrolled):</label>
+                            <input type="text" id="tribalAffiliation" name="tribalAffiliation" placeholder="e.g., Blackfeet (Amskapii Piikani)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="areaLive">Area You Live:</label>
+                            <input type="text" id="areaLive" name="areaLive" placeholder="e.g., Blackfoot">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="photoUrl">Photo URL (link to your picture):</label>
+                            <input type="url" id="photoUrl" name="photoUrl" placeholder="https://example.com/photo.jpg">
+                            <small>Paste a direct link to an image. Or leave blank to skip.</small>
+                        </div>
+                    </fieldset>
+
+                    <!-- About You -->
+                    <fieldset>
+                        <legend>About You</legend>
+                        
+                        <div class="form-group">
+                            <label for="likesHobbies">Likes & Hobbies:</label>
+                            <textarea id="likesHobbies" name="likesHobbies" rows="4" placeholder="What do you enjoy? What are your hobbies?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="goals">Goals:</label>
+                            <textarea id="goals" name="goals" rows="4" placeholder="What are your short-term and long-term goals?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="motto">Motto or Favorite Quote:</label>
+                            <textarea id="motto" name="motto" rows="3" placeholder="What inspires you? A favorite quote or motto?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="strengths">Your Strengths (as given by a classmate or colleague):</label>
+                            <textarea id="strengths" name="strengths" rows="4" placeholder="What strengths have others noticed in you?"></textarea>
+                            <small>In Blackfeet culture, praise is a high honor.</small>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Create My Poster</button>
+                        <button type="reset" class="btn-secondary">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- GALLERY PAGE -->
+        <section id="gallery-page" class="page">
+            <div class="gallery-container">
+                <h2>Student Posters Gallery</h2>
+                <p class="gallery-intro">View posters created by your classmates and staff.</p>
+                
+                <div id="galleryGrid" class="gallery-grid">
+                    <!-- Gallery items will be populated by JavaScript -->
+                </div>
+
+                <div id="emptyGallery" class="empty-message">
+                    <p>No posters yet. Be the first to create one! 🎨</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- POSTER VIEW PAGE -->
+        <section id="poster-page" class="page">
+            <div class="poster-view-container">
+                <div class="poster-actions">
+                    <button class="btn-secondary" onclick="goBack()">← Back to Gallery</button>
+                    <button class="btn-primary" onclick="downloadPoster()">Download Poster</button>
+                    <button class="btn-secondary" onclick="editPoster()">Edit HTML</button>
+                </div>
+                <div id="posterDisplay" class="poster-display">
+                    <!-- Poster will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- EDIT HTML PAGE -->
+        <section id="edit-page" class="page">
+            <div class="edit-container">
+                <h2>Edit Your Poster HTML</h2>
+                <div class="edit-actions">
+                    <button class="btn-secondary" onclick="goBack()">Back</button>
+                    <button class="btn-primary" onclick="saveEditedPoster()">Save Changes</button>
+                </div>
+                <textarea id="htmlEditor" class="html-editor"></textarea>
+                <div id="editPreview" class="edit-preview"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
